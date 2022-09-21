@@ -4,7 +4,7 @@
 using namespace std;
 
 string HI_THERE = "Hello there, welcome to TikZ Helper. What can I help you with today?\n";
-string MAIN_MENU = "\nMAIN MENU\n1. Iterative collage\n0. Exit\nPlease make your choice.\n";
+string MAIN_MENU = "\nMAIN MENU\n1. Iterative collage\n0. Exit\nPlease make your choice.\n\n";
 int main()
 {
     cout << HI_THERE << flush;
@@ -24,6 +24,6 @@ int main()
             break;
         }
     }
-    cout << "Have a nice day.\n" << flush;
+    cout << "\nHave a nice day.\n\n" << flush;
     return 0;
 }
