@@ -20,12 +20,18 @@ BasicTikZpicture obtainPureImage(string filename)
         file >> aux;
     }
     string d1, d2;
-    file >> d1 >> d2;
+    file >> d1;
+    vector<string> colorDefinitions;
+    while (d1.substr(0,12) == "\\definecolor")
+    {
+        colorDefinitions.push_back(d1); file >> d1;
+    }
+    file >> d2;
     file >> aux;
     vector<string> v;
     do {
         size_t pos = 0;
-        while (pos += token.length())
+        while (pos += 1)
         {
             pos = aux.find(MAGIC_STRING, pos);
             if (pos == std::string::npos) {
@@ -33,14 +39,15 @@ BasicTikZpicture obtainPureImage(string filename)
             }
 
             aux.erase(pos, MAGIC_STRING.length());
-            aux.insert(pos, token);
+            string ss; ss.push_back(token);
+            aux.insert(pos, ss);
         }
         v.push_back(aux);
         cin >> aux;
     } while (aux != "\\end{tikzpicture}");
     file.close();
 
-    return {d1,d2,v};
+    return {colorDefinitions,d1,d2,v};
     
 
 }

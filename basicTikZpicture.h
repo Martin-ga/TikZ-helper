@@ -5,8 +5,9 @@ using namespace std;
 
 struct BasicTikZpicture
 {
-    string option1;
-    string option2;
+    vector<string> colorDefinitions;
+    string generalOptions;
+    string clipOption;
     vector<string> data;
-    BasicTikZpicture(string option1, string option2, vector<string> data) : option1(option1), option2(option2), data(data) {}
+    BasicTikZpicture(vector<string> colDef, string option1, string option2, vector<string> data) : colorDefinitions(colDef), generalOptions(option1), clipOption(option2), data(data) {}
 };

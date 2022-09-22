@@ -1,0 +1,20 @@
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=2.0cm,y=2.0cm]
+\clip(-3.,3.) rectangle (7.,8.);
+\draw [line width=2.pt,domain=-3.:7.] plot(\x,{(--14.72-1.14*\x)/2.18});
+\begin{scriptsize}
+\draw [fill=ududff] (2.28,5.56) circle (2.5pt);
+\draw[color=ududff] (2.42,5.93) node {$A$};
+\draw [fill=ududff] (4.46,4.42) circle (2.5pt);
+\draw[color=ududff] (4.6,4.79) node {$B$};
+\draw[color=black] (1.48,6.15) node {$f$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}

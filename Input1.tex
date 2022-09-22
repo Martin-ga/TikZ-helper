@@ -1,0 +1,36 @@
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0.}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(21873.918618664808,21874.594559264497) rectangle (21877.098406071545,21876.24979106525);
+\fill[line width=2.pt,color=zzttqq,fill=zzttqq,fill opacity=0.10000000149011612] (21875.525914371843,21875.693135204565) -- (21875.746998746818,21875.2722245676) -- (21875.34734622283,21875.52307030074) -- cycle;
+\draw [line width=2.pt,color=zzttqq] (21875.525914371843,21875.693135204565)-- (21875.746998746818,21875.2722245676);
+\draw [line width=2.pt,color=zzttqq] (21875.746998746818,21875.2722245676)-- (21875.34734622283,21875.52307030074);
+\draw [line width=2.pt,color=zzttqq] (21875.34734622283,21875.52307030074)-- (21875.525914371843,21875.693135204565);
+\begin{scriptsize}
+\draw [fill=ududff] (21875.,21875.) circle (2.5pt);
+\draw[color=ududff] (21875.019202616546,21875.05482986172) node {$A$};
+\draw [fill=ududff] (21876.,21875.) circle (2.5pt);
+\draw[color=ududff] (21876.021053443328,21875.05482986172) node {$B$};
+\draw [fill=ududff] (21876.,21876.) circle (2.5pt);
+\draw[color=ududff] (21876.021053443328,21876.053776773053) node {$C$};
+\draw [fill=ududff] (21875.,21876.) circle (2.5pt);
+\draw[color=ududff] (21875.019202616546,21876.053776773053) node {$D$};
+\draw [fill=ududff] (21875.525914371843,21875.693135204565) circle (2.5pt);
+\draw[color=ududff] (21875.544811311178,21875.745961736422) node {$E$};
+\draw [fill=ududff] (21875.746998746818,21875.2722245676) circle (2.5pt);
+\draw[color=ududff] (21875.76841280005,21875.324893997633) node {$F$};
+\draw [fill=ududff] (21875.34734622283,21875.52307030074) circle (2.5pt);
+\draw[color=ududff] (21875.36767246934,21875.577534640906) node {$G$};
+\draw[color=zzttqq] (21875.602889619975,21875.48751326227) node {$g$};
+\draw[color=zzttqq] (21875.579658296458,21875.46428193875) node {$e$};
+\draw[color=zzttqq] (21875.47511734062,21875.600765964427) node {$f$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{document}
