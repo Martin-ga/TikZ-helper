@@ -84,6 +84,7 @@ void doIterativeCollage()
         cin >> goOn;
 
     } while (goOn == "y");
+    file << "\\documentclass[12pt]{article}\n\\usepackage{pgfplots}\n\\pgfplotsset{compat=1.15}\n\\usepackage{mathrsfs}\n\\usetikzlibrary{arrows}\n\\pagestyle{empty}\n\\begin{document}\n";
     for (string e : colorDefinitions)
     {
         file << e << "\n";
@@ -93,7 +94,7 @@ void doIterativeCollage()
     {
         file << e << "\n";
     }
-    file << "\\end{tikzpicture}";
+    file << "\\end{tikzpicture}\n\\end{document}";
     file.close();
 
 
