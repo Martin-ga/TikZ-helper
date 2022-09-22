@@ -1,6 +1,12 @@
 # Prerequisites
 *.d
 
+# TeX examples
+*.tex
+*.aux
+*.log
+*.pdf
+
 # Compiled Object files
 *.slo
 *.lo

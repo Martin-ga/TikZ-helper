@@ -7,6 +7,7 @@ string HI_THERE = "Hello there, welcome to TikZ Helper. What can I help you with
 string MAIN_MENU = "\nMAIN MENU\n1. Iterative collage\n0. Exit\nPlease make your choice.\n\n";
 int main()
 {
+    string dummy;
     cout << HI_THERE << flush;
     
     int choice = 1;
@@ -14,6 +15,7 @@ int main()
     {
         cout << MAIN_MENU << flush;
         cin >> choice;
+        getline(cin, dummy);
         switch (choice)
         {
         case 1:

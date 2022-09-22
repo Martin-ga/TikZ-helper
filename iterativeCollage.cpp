@@ -6,9 +6,10 @@
 
 void doIterativeCollage()
 {
+    string dummy;
     cout << "First of all, give a file name which will be used to save everything.\n";
     string fileName;
-    cin >> fileName;
+    getline(cin, fileName);
     auto file = fileForWriting(fileName);
     string generalOptions;
     stringstream clipOption;
@@ -16,6 +17,7 @@ void doIterativeCollage()
     cout << "Provide Xmin, Ymin, Xmax, Ymax separated by spaces.\n";
     long double Xmin, Ymin, Xmax, Ymax;
     cin >> Xmin >> Ymin >> Xmax >> Ymax;
+    getline(cin, dummy);
     clipOption << "\\clip(" << Xmin << "," << Ymin << ") rectangle (" << Xmax << "," << Ymax << ");";
     }
     set<string> colorDefinitions;
@@ -26,7 +28,7 @@ void doIterativeCollage()
 
         cout << "Provide the name of a file you would like to use in the collage.\n";
         string fileName;
-        cin >> fileName;
+        getline (cin,fileName);
         auto currentData = obtainPureImage(fileName);
         generalOptions = currentData.generalOptions;
         for (auto e : currentData.colorDefinitions)
@@ -36,6 +38,7 @@ void doIterativeCollage()
         cout << "Provide Xmin, Ymin, Xmax, Ymax of the set of copies of this instance, separated by spaces.\n";
         int Xmin, Ymin, Xmax, Ymax;
         cin >> Xmin >> Ymin >> Xmax >> Ymax;
+        getline(cin, dummy);
         for (int x = Xmin; x <= Xmax; x++)
         {
             for (int y = Ymin; y <= Ymax; y++)
@@ -47,8 +50,7 @@ void doIterativeCollage()
                     input.str(el);
                     string result;
                     char cache;
-                    input >> cache;
-                    while ((bool)(input))
+                    while (input.get(cache))
                     {
                         if ((char)(7) == cache)
                         {
@@ -63,7 +65,7 @@ void doIterativeCollage()
                             {
                                 cout << "The file happens to contain magic sequence in a random place.\nThe file will not be processed and everything will be stopped\nso nothing weird happens. Please check the file.\nTerribly sorry about this :( .\n";
                                 cout << "Error detected in line:\n" << el << "\n";
-                                assert(true);
+                                assert(false);
                             }
                             result += aux.str();
                         }
@@ -71,7 +73,6 @@ void doIterativeCollage()
                         {
                             result.push_back(cache);
                         }
-                        input >> cache;
                     }
                     v.push_back(result);
 

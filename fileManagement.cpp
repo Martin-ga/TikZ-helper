@@ -14,20 +14,20 @@ BasicTikZpicture obtainPureImage(string filename)
     ifstream file;
     file.open(filename + extension);
     vector<string> vs;
-    string aux; file >> aux;
+    string aux; getline(file,aux);
     while (aux != "\\begin{document}")
     {
-        file >> aux;
+        getline(file,aux);
     }
     string d1, d2;
-    file >> d1;
+    getline(file,d1);
     vector<string> colorDefinitions;
     while (d1.substr(0,12) == "\\definecolor")
     {
-        colorDefinitions.push_back(d1); file >> d1;
+        colorDefinitions.push_back(d1); getline(file,d1);
     }
-    file >> d2;
-    file >> aux;
+    getline(file,d2);
+    getline(file,aux);
     vector<string> v;
     do {
         size_t pos = 0;
@@ -43,7 +43,7 @@ BasicTikZpicture obtainPureImage(string filename)
             aux.insert(pos, ss);
         }
         v.push_back(aux);
-        cin >> aux;
+        getline(file,aux);
     } while (aux != "\\end{tikzpicture}");
     file.close();
 
