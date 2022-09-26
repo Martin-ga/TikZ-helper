@@ -1,31 +1,22 @@
 #include <iostream>
 #include <string>
+#include <map>
 #include "iterativeCollage.h"
+#include "fileManagement.h"
+#include "globalConstants.h"
+#include "commandsManager.h"
 using namespace std;
 
-string HI_THERE = "Hello there, welcome to TikZ Helper. What can I help you with today?\n";
-string MAIN_MENU = "\nMAIN MENU\n1. Iterative collage\n0. Exit\nPlease make your choice.\n\n";
 int main()
 {
-    string dummy;
-    cout << HI_THERE << flush;
-    
-    int choice = 1;
-    while (choice)
+    vector<string> commands = getLinesOfFile(COMMANDS_FILE);
+    map<string,BasicTikZpicture> picturesData;
+    for (string s : commands)
     {
-        cout << MAIN_MENU << flush;
-        cin >> choice;
-        getline(cin, dummy);
-        switch (choice)
-        {
-        case 1:
-            doIterativeCollage();
-            break;
-        
-        default:
-            break;
-        }
+        cout << "Processing " << s << "...\n";
+        processCommand(s, picturesData);
+        cout << "The command was successfully processed.\n";
     }
-    cout << "\nHave a nice day.\n\n" << flush;
+    cout << "Have a nice day.\n" << flush;
     return 0;
 }

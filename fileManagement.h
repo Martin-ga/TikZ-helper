@@ -9,5 +9,7 @@
 #include "globalConstants.h"
 using namespace std;
 
-ofstream fileForWriting(string filename);
-BasicTikZpicture obtainPureImage(string file);
+vector<string> getLinesOfFile(const string& filename);
+void savePureImage(const BasicTikZpicture& pic, const string& filename);
+ofstream fileForWriting(const string& filename);
+BasicTikZpicture obtainPureImage(const string& file);

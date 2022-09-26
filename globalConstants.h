@@ -8,3 +8,4 @@ inline char token = (char)(7);
 // The magic number is 21875
 inline long double MAGIC_NUMBER_LAST_DIGIT = 5;
 inline long double MAGIC_NUMBER = 21875;
+inline string COMMANDS_FILE = "script.txt";

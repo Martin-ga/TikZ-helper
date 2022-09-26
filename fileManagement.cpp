@@ -1,15 +1,27 @@
 #include "fileManagement.h"
 
+vector<string> getLinesOfFile(const string& filename)
+{
+    ifstream file; file.open(filename);
+    vector<string> lines;
+    string aux;
+    getline(file,aux);
+    while(file)
+    {
+        lines.push_back(aux);
+        getline(file,aux);
+    }
+    return lines;
+}
 
 
-
-ofstream fileForWriting(string filename)
+ofstream fileForWriting(const string& filename)
 {
     ofstream outfile;
     outfile.open(filename + extension);
     return outfile;
 }
-BasicTikZpicture obtainPureImage(string filename)
+BasicTikZpicture obtainPureImage(const string& filename)
 {
     ifstream file;
     file.open(filename + extension);
@@ -50,4 +62,21 @@ BasicTikZpicture obtainPureImage(string filename)
     return {colorDefinitions,d1,d2,v};
     
 
+}
+
+void savePureImage(const BasicTikZpicture& pic, const string& filename)
+{
+    auto file = fileForWriting(filename);
+    file << "\\documentclass[12pt]{article}\n\\usepackage{pgfplots}\n\\pgfplotsset{compat=1.15}\n\\usepackage{mathrsfs}\n\\usetikzlibrary{arrows}\n\\pagestyle{empty}\n\\begin{document}\n";
+    for (string e : pic.colorDefinitions)
+    {
+        file << e << "\n";
+    }
+    file << pic.generalOptions << "\n" << pic.clipOption << "\n";
+    for (string e : pic.data)
+    {
+        file << e << "\n";
+    }
+    file << "\\end{tikzpicture}\n\\end{document}";
+    file.close();
 }
