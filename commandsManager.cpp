@@ -31,7 +31,10 @@ void processCommand(const string& s, map<string,BasicTikZpicture>& picturesData)
     }
     else if (cmd == "merge")
     {
-
+        // Structure of the arguments: name of new image,
+        // then four coordinates for clip
+        // and then list of files which are integrated.
+        runMergeCommand(args, picturesData);
     }
     else if (cmd == "addTable")
     {

@@ -9,5 +9,5 @@ struct BasicTikZpicture
     string generalOptions;
     string clipOption;
     vector<string> data;
-    BasicTikZpicture(vector<string> colDef, string option1, string option2, vector<string> data) : colorDefinitions(colDef), generalOptions(option1), clipOption(option2), data(data) {}
+    BasicTikZpicture(vector<string> colorDefinitions, string generalOptions, string clipOption, vector<string> data) : colorDefinitions(colorDefinitions), generalOptions(generalOptions), clipOption(clipOption), data(data) {}
 };
