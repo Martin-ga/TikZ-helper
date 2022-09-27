@@ -16,7 +16,17 @@ void processCommand(const string& s, map<string,BasicTikZpicture>& picturesData)
     }
     if (cmd == "collage")
     {
-
+        // Structure of the arguments: name of new image,
+        // then four coordinates for clip,
+        // then list of the following:
+        // {
+        //      Name of file to be included
+        //      Xmin, Ymin, Xmax, Ymax of the lattice which repeats the instance
+        // }
+        // Reminder: the instances should be drawn in [21875,21876] x [21875,21876]
+        // since the code detects coordinates which have to be translated by looking
+        // for that digit pattern. Do not use the pattern elsewhere.
+        runCollageCommand(args, picturesData);
     }
     else if (cmd == "load")
     {
@@ -38,7 +48,8 @@ void processCommand(const string& s, map<string,BasicTikZpicture>& picturesData)
     }
     else if (cmd == "addTable")
     {
-
+        // Structure of the arguments: to be determined
+        
     }
     else
     {

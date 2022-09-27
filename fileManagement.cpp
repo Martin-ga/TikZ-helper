@@ -66,7 +66,7 @@ BasicTikZpicture obtainPureImage(const string& filename)
 
 void savePureImage(const BasicTikZpicture& pic, const string& filename)
 {
-    auto file = fileForWriting(filename);
+    auto file = fileForWriting(filename + extension);
     file << "\\documentclass[12pt]{article}\n\\usepackage{pgfplots}\n\\pgfplotsset{compat=1.15}\n\\usepackage{mathrsfs}\n\\usetikzlibrary{arrows}\n\\pagestyle{empty}\n\\begin{document}\n";
     for (string e : pic.colorDefinitions)
     {

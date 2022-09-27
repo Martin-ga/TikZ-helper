@@ -4,6 +4,9 @@
 #include <string>
 #include <iostream>
 #include <sstream>
+#include <map>
+#include <set>
+#include <cassert>
 using namespace std;
 
-void doIterativeCollage();
+void runCollageCommand(const vector<string>& arguments, map<string,BasicTikZpicture>& picturesData);

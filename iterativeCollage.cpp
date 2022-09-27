@@ -1,10 +1,9 @@
 #include "iterativeCollage.h"
-#include <set>
-#include <cassert>
 
 
 
-void doIterativeCollage()
+
+void runCollageCommand(const vector<string>& arguments, map<string,BasicTikZpicture>& picturesData)
 {
     string dummy;
     cout << "First of all, give a file name which will be used to save everything.\n";
