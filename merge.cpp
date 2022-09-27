@@ -4,7 +4,7 @@ void runMergeCommand(const vector<string>& arguments, map<string,BasicTikZpictur
 {
     if (arguments.size() < 5)
     {
-        cout << "Arguments of merge are not enough, quitting now for your safety.\n";
+        cout << "Too few arguments for merge, quitting now for your safety.\n";
         assert(false);
     }
     string clipOption = generateClipOption(generateCoordinates(arguments[1],arguments[2],arguments[3],arguments[4]));
