@@ -46,7 +46,7 @@ void processCommand(const string& s, map<string,BasicTikZpicture>& picturesData)
         // and then list of files which are integrated.
         runMergeCommand(args, picturesData);
     }
-    else if (cmd == "addTable")
+    else if (cmd == "table")
     {
         // Structure of the arguments: output file, input file, coordinates, step in cm, color
         runTableCommand(args, picturesData);
