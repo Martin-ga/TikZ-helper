@@ -8,6 +8,7 @@
 #include "saveTikZ.h"
 #include "loadTikZ.h"
 #include "merge.h"
+#include "table.h"
 #include "iterativeCollage.h"
 using namespace std;
 

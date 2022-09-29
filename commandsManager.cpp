@@ -48,8 +48,8 @@ void processCommand(const string& s, map<string,BasicTikZpicture>& picturesData)
     }
     else if (cmd == "addTable")
     {
-        // Structure of the arguments: to be determined
-        
+        // Structure of the arguments: output file, input file, coordinates, step in cm, color
+        runTableCommand(args, picturesData);
     }
     else
     {
