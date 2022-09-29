@@ -2,7 +2,7 @@
 
 vector<string> getLinesOfFile(const string& filename)
 {
-    ifstream file; file.open(filename);
+    ifstream file; file.open(ROUTE + filename);
     vector<string> lines;
     string aux;
     getline(file,aux);
@@ -18,13 +18,13 @@ vector<string> getLinesOfFile(const string& filename)
 ofstream fileForWriting(const string& filename)
 {
     ofstream outfile;
-    outfile.open(filename + extension);
+    outfile.open(ROUTE + filename + extension);
     return outfile;
 }
 BasicTikZpicture obtainPureImage(const string& filename)
 {
     ifstream file;
-    file.open(filename + extension);
+    file.open(ROUTE + filename + extension);
     vector<string> vs;
     string aux; getline(file,aux);
     while (aux != "\\begin{document}")
@@ -66,7 +66,7 @@ BasicTikZpicture obtainPureImage(const string& filename)
 
 void savePureImage(const BasicTikZpicture& pic, const string& filename)
 {
-    auto file = fileForWriting(filename + extension);
+    auto file = fileForWriting(filename);
     file << "\\documentclass[12pt]{article}\n\\usepackage{pgfplots}\n\\pgfplotsset{compat=1.15}\n\\usepackage{mathrsfs}\n\\usetikzlibrary{arrows}\n\\pagestyle{empty}\n\\begin{document}\n";
     for (string e : pic.colorDefinitions)
     {

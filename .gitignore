@@ -8,6 +8,9 @@
 *.pdf
 *.synctex.gz
 
+# Scripts
+script.exe
+
 # Compiled Object files
 *.slo
 *.lo
