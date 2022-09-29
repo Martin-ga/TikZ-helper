@@ -9,7 +9,7 @@
 *.synctex.gz
 
 # Scripts
-script.exe
+*script.txt
 
 # Compiled Object files
 *.slo
