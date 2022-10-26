@@ -9,8 +9,9 @@ using namespace std;
 
 int main()
 {
-    cout << "Please, enter the route you would like to compile.\nUse / at the end.\n";
+    cout << "Please, enter the route you would like to compile.\n";
     getline(cin, ROUTE);
+    ROUTE += "/";
     vector<string> commands = getLinesOfFile(COMMANDS_FILE);
     map<string,BasicTikZpicture> picturesData;
     for (string s : commands)
