@@ -14,6 +14,11 @@ vector<string> getLinesOfFile(const string& filename)
     return lines;
 }
 
+bool fileExists(const string& name)
+{
+    struct stat buffer;
+    return (stat(name.c_str(), &buffer) == 0);
+}
 
 ofstream fileForWriting(const string& filename)
 {
